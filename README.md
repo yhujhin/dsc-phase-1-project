@@ -1,65 +1,129 @@
-# Phase 1 Project
-
-You've made it all the way through the first phase of this course - take a minute to celebrate your awesomeness!
-
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-phase-1-project/master/awesome.gif)
-
-Now you will put your new skills to use with a large end-of-Phase project! This project should take 20 to 30 hours to complete.
-
-## Project Overview
-
-For this project, you will use exploratory data analysis to generate insights for a business stakeholder.
+![Microsoft Movie Production](images/Front.png)
 
 ### Business Problem
+---
 
-Microsoft sees all the big companies creating original video content and they want to get in on the fun. They have decided to create a new movie studio, but they don’t know anything about creating movies. You are charged with exploring what types of films are currently doing the best at the box office. You must then translate those findings into actionable insights that the head of Microsoft's new movie studio can use to help decide what type of films to create.
+Establishing a new movie production studio, Microsoft faces the formidable challenge of competing against industry giants armed with historical industry insights. To thrive in this competitive landscape, Microsoft needs to strategically determine the types of movies that are most likely to succeed in terms of profitability, ratings, and optimal release timing. 
 
-### The Data
+This entails understanding audience preferences and aligning with market trends to ensure a strong start for the studio's debut film. However, with limited industry experience, Microsoft lacks the necessary data-driven approach to make informed decisions.
 
-In the folder `zippedData` are movie datasets from:
+### Overview
+---
 
-* [Box Office Mojo](https://www.boxofficemojo.com/)
-* [IMDB](https://www.imdb.com/)
-* [Rotten Tomatoes](https://www.rottentomatoes.com/)
-* [TheMovieDB](https://www.themoviedb.org/)
-* [The Numbers](https://www.the-numbers.com/)
+To address this challenge, our project focuses on conducting thorough exploratory data analysis.
 
-It is up to you to decide what data from this to use and how to use it. If you want to make this more challenging, you can scrape websites or make API calls to get additional data. If you are feeling overwhelmed or behind (e.g. struggled with the Phase 1 Code Challenge), we recommend you use only the following data files:
+We've structured our approach into three key stages to ensure the acquisition of pertinent data for our analysis. In the initial phase, we'll delve into data from IMDB and TMDB to explore genres, ratings, and the popularity of movies. Subsequently, in the second stage, we'll dissect datasets from BOM and The Numbers, focusing on financial aspects such as production budgets, total gross revenue, and net revenue calculations. The third phase will serve as a comprehensive synthesis, merging insights derived from the earlier stages to understand connection between the initial data and the financial aspects of the movies. 
 
-* imdb.title.basics
-* imdb.title.ratings
-* bom.movie_gross
+Our goal is to empower Microsoft with the necessary information to overcome their competition, establish a strong foothold in the industry, and pave the way for long-term success in the dynamic realm of movie production.
 
-## Deliverables
+### Data & Methodology
+---
 
-There are three deliverables for this project:
+**Initial Observation:**
+Upon conducting our initial review of the datasets, we observe the presence of distinct columns containing diverse sets of data.
 
-* A **GitHub repository**
-* A **Jupyter Notebook**
-* A **non-technical presentation**
+To address our business problem, our analysis will be divided into three parts:
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic for instructions on creating and submitting your deliverables. Refer to the rubric associated with this assignment for specifications describing high-quality deliverables.
+1. The first part will focus on examining months, popularity, time, and genres. This exploration will rely on the following datasets:
 
-### Key Points
+* IMDB dataset
+* 2 IMDB datasets
 
-* **Your analysis should yield three concrete business recommendations.** The ultimate purpose of exploratory analysis is not just to learn about the data, but to help an organization perform better. Explicitly relate your findings to business needs by recommending actions that you think the business (Microsoft) should take.
+2. The second part centers around analyzing the financial aspects. For this purpose, we will utilize the following datasets:
 
-* **Communicating about your work well is extremely important.** Your ability to provide value to an organization - or to land a job there - is directly reliant on your ability to communicate with them about what you have done and why it is valuable. Create a storyline your audience (the head of Microsoft's new movie studio) can follow by walking them through the steps of your process, highlighting the most important points and skipping over the rest.
+* TN movies dataset
+* BOM movies dataset
 
-* **Use plenty of visualizations.** Visualizations are invaluable for exploring your data and making your findings accessible to a non-technical audience. Spotlight visuals in your presentation, but only ones that relate directly to your recommendations. Simple visuals are usually best (e.g. bar charts and line graphs), and don't forget to format them well (e.g. labels, titles).
+3. In the third phase, we combine both the creative and financial parts. We achieve this by merging the datasets from the first two steps using an inner merge. This helps make sure our data is complete and reliable without any missing values. While this consolidation might result in a reduction in the number of data points, it enhances the accuracy and reliability of our analysis. Despite the reduced numbers, we will still use this combined dataset for our analysis in this project. Additionally, we recognize the significance of addressing these limitations in future iterations, allowing for continuous improvement and refinement of our analysis.
 
-## Getting Started
+This strategy enables us to glean insights from diverse movie industry dimensions, accounting for data quality and availability. It aligns with our business problem, aiming to offer a holistic comprehension of Microsoft's movie production studio endeavor.
 
-Please start by reviewing this assignment, the rubric at the bottom of it, and the "Project Submission & Review" page. If you have any questions, please ask your instructor ASAP.
 
-Next, we recommend you check out [the Phase 1 Project Templates and Examples repo](https://github.com/learn-co-curriculum/dsc-project-template) and use the MVP template for your project.
 
-Alternatively, you can fork [the Phase 1 Project Repository](https://github.com/learn-co-curriculum/dsc-phase-1-project), clone it locally, and work in the `student.ipynb` file. Make sure to also add and commit a PDF of your presentation to your repository with a file name of `presentation.pdf`.
+### Initial Questions:
+---
 
-## Project Submission and Review
+From our business problem, I've shaped some initial questions that align with our goals and data exploration:
 
-Review the "Project Submission & Review" page in the "Milestones Instructions" topic to learn how to submit your project and how it will be reviewed. Your project must pass review for you to progress to the next Phase.
+1. What is the relationship between popularity and movie ratings?
+2. Does the duration of a movie influence its ratings?
+3. Which genre has the highest ratings on average?
+4. How do the highest grossing movies compare to their net revenue?
+5. Which genres generate the highest revenue in the movie industry?
 
-## Summary
+These questions will steer us in the direction we need to take on this journey as we work to address and resolve this problem.
 
-This project will give you a valuable opportunity to develop your data science skills using real-world data. The end-of-phase projects are a critical part of the program because they give you a chance to bring together all the skills you've learned, apply them to realistic projects for a business stakeholder, practice communication skills, and get feedback to help you improve. You've got this!
+### Results
+---
+![Popularity vs Ratings](images/popularity_vs_ratings.png)
+
+The figure displays the relationship between popularity and average ratings in the dataset, revealing a positive correlation. As movie popularity and the number of ratings increase, the average user ratings also tend to rise, indicating a common trend where users rate movies they enjoy. 
+
+Interestingly, the data also shows that some movies with high average ratings have received relatively fewer ratings, highlighting instances where high quality may not necessarily coincide with high popularity.
+
+![Rating vs Duration](images/ratings_vs_duration.png)
+
+Movie durations appear to have a limited influence on ratings, as shown by the scatter plot. Movies of different lengths have garnered both high and low ratings, implying that duration alone isn't a significant predictor of a movie's popularity based on user ratings. 
+
+The plot also highlights that a majority of movies fall within the 80-120 minute range, which seems to resonate well with viewers.
+
+
+![Rating vs Genre](images/genre_ratings.png)
+
+The bar chart of average ratings reveals that genres such as news, documentary, biography, and history receive the highest average ratings, while action, thriller, and horror genres receive the lowest. 
+
+This suggests that viewers tend to vote more for movies they consider average, possibly indicating their inclination to voice dissatisfaction with below-average scores for films that disappoint their expectations. 
+
+This underscores the importance of meeting genre-specific expectations for movie success.
+
+![Top 15 Movies by Gross Revenue](images/top_15_by_gross.png)
+
+The top 15 movies with the highest total gross revenue encompass a variety of genres, including action, adventure, fantasy, and animation. This diversity implies that a movie's financial success is influenced by factors beyond its genre, such as marketing strategies, casting choices, and engaging storylines. 
+
+Notable movie samples in this list, such as "Avatar," "Star Wars," "Titanic," "Avengers," "Jurassic Park," "Incredibles," and "Frozen," reflect a mix of genres and popularity. These movies might appeal to a wide range of audiences, including families seeking entertainment, thereby contributing to their high revenue. 
+
+This suggests that a successful movie's ability to capture diverse viewer interests is a key factor in achieving substantial total gross revenue.
+
+![Top 15 Movies by Gross Revenue](images/top_15_by_net.png)
+
+The top 15 movies that earn the most money also show up frequently in the list of top 15 movies with the highest profits. This means that movies that do well at the box office also tend to make a lot of profit. 
+
+We want to find out if spending more money on making a movie results in more earnings. This will help us understand if investing more in making movies leads to making more money from them.
+
+![Production Budget vs Revenue](images/production_budget_vs_gross_net.png)
+
+The analysis of production budgets in relation to gross and net revenue provides interesting insights. It appears that there is a positive correlation between higher production budgets and both higher gross and net revenue. This suggests that investing more in the production of a movie could potentially lead to higher earnings at the box office and greater overall profitability. 
+
+However, it's important to note that while there is a general trend of higher budgets being associated with higher revenues, there are also instances where movies with lower budgets have managed to achieve significant financial success. This indicates that factors beyond just budget, such as story, marketing, and audience reception, also play a crucial role in determining a movie's financial performance.
+
+![Production Budget vs Revenue](images/gross_revenue_genre.png)
+
+Examining the movie genres that generate the highest total gross revenue offers intriguing insights into audience preferences and financial success. While the top genres—Animation, Adventure, and Sci-Fi—may not necessarily receive the highest ratings, they consistently secure top positions in terms of earnings. 
+
+Interestingly, Documentary and News genres, which receive higher ratings, often have minimal earnings. This indicates that financial success isn't solely dependent on critical acclaim, and genres that resonate well with audiences tend to result in higher profits. 
+
+Microsoft's new movie studio could leverage this information to strategize their film production approach. They might consider creating movies in genres that have proven to be financially lucrative, while also exploring opportunities to blend higher-rated genres with those that yield substantial revenue. 
+
+This could provide a balanced approach to attract both audiences and earnings.
+
+### Conclusion:
+---
+
+In this analysis, we embarked on a comprehensive exploration of various dimensions within the movie industry to aid Microsoft's new movie production studio. Our investigation encompassed factors such as genres, ratings, popularity, and financial aspects. 
+
+Notably, we observed consistent correlations between movie popularity, ratings, and commercial success, emphasizing the importance of understanding audience preferences and aligning with market trends. Additionally, we identified that top-grossing movies often lead in net revenue, reinforcing the notion that financial achievements at the box office translate into profits.
+
+# Suggestions:
+---
+
+Based on our findings, we recommend the following strategies to Microsoft:
+
+ - **Genre Diversity:** The top-performing movies encompass various genres, indicating that a diverse content portfolio can attract a wider audience.
+
+ - **Optimized Investment:** While higher production budgets can contribute to revenue, it's essential to strike a balance. Careful evaluation of each project's potential is crucial for maximizing returns.
+
+ - **Quality Focus:** The strong correlation between popularity, ratings, and revenue underscores the importance of delivering high-quality content that resonates with viewers.
+
+ - **Continuous Adaptation:** Ongoing analysis and monitoring of market trends and audience preferences will be instrumental in maintaining competitiveness in the ever-evolving movie industry.
+
+By implementing these strategies, Microsoft can establish itself as a formidable player in the movie production landscape, appealing to audiences and achieving both creative and financial success.
